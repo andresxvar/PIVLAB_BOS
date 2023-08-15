@@ -1,3 +1,5 @@
+% TODO: add a method to save result
+
 classdef PLBOSS
     %PMBOSS Summary of this class goes here
     %   Detailed explanation goes here
@@ -139,7 +141,7 @@ classdef PLBOSS
             obj.ImageFilenames = list;
         end
 
-        function obj = Analyse(obj,options)
+        function obj = Analyze(obj,options)
             arguments
                 obj
                 options.framenum = 1
