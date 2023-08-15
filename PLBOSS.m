@@ -1,4 +1,4 @@
-classdef PMBOSS
+classdef PLBOSS
     %PMBOSS Summary of this class goes here
     %   Detailed explanation goes here
 
@@ -22,8 +22,8 @@ classdef PMBOSS
     end
 
     methods
-        function obj = PMBOSS(options)
-            %PMBOSS Construct an instance of this class
+        function obj = PLBOSS(options)
+            %PLBOSS Construct an instance of this class
             %   Detailed explanation goes here
             arguments
                 options.BackgroundFilename = []
@@ -34,7 +34,7 @@ classdef PMBOSS
 
             % check PIVLAB
             if isempty(which("piv_FFTmulti"))
-                error("PMBOSS: requires PIVLAB, add PIVLAB to path or download from: https://www.mathworks.com/matlabcentral/fileexchange/27659-pivlab-particle-image-velocimetry-piv-tool-with-gui/")
+                error("PLBOSS: requires PIVLAB, add PIVLAB to path or download from: https://www.mathworks.com/matlabcentral/fileexchange/27659-pivlab-particle-image-velocimetry-piv-tool-with-gui/")
             end
 
             obj = obj.Set_Settings();
@@ -118,7 +118,7 @@ classdef PMBOSS
         end
 
         function obj = PrepBackground(obj)
-            fprintf('PMBOSS.PREPBACKGROUND: pre-processing background ...')
+            fprintf('PLBOSS.PREPBACKGROUND: pre-processing background ...')
             img=imread(obj.BackgroundFilename);
             obj.BackgroundImg = PIVlab_preproc (img, obj.PreprocessOptions{:,2});
             fprintf('OK\n');
